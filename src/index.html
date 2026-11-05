@@ -3,14 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Champions Tournament Manager</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script type="module" src="js/main.js"></script>
+    <title>Home - Champions Tournament Manager</title>
+    <meta name="description" content="Home page for Pokemon Champions Tournament Manager Web App">
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="main.js"></script>
+    <script defer type="module"  src="navButtons.js"></script>
+    <link rel="icon" href="favicon.png" sizes="32x32" href="/favicon-32x32.png">
   </head>
   <body>
-    
-    <main id="main"></main>
+    <header id="header">
+      <h1>Champions Tournament Manager</h1>
+      <nav id="primary_nav" class="primary_nav" aria-label="Main navigation">
+        <a href="index.html" class="currentPage" aria-current="page">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="bracket.html">Bracket</a>
+      </nav>
+      
+    </header>
 
-    <footer id="footer"></footer>
+    <main id="main">
+      
+      <p>Welcome to Champions Tournament Manager! This webtool is designed to help
+        create teams for and manage tournaments for Pokemon Champions. Create or edit 
+        your teams in the Team-Builder section, and then import them into the Bracket 
+        section to generate your tournament. Need to stop? Export your teams and tournaments
+        so they can be used later. Good luck and have fun!
+      </p>
+    </main>
+
+    <footer id="footer">Landon Mahaffey</footer>
   </body>
 </html>

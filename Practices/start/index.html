@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A small task board that remembers its state." />
+    <title>Focus Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <main class="board">
+      <header class="board-header">
+        <h1>Focus Board</h1>
+        <button id="theme-toggle" type="button" aria-pressed="false">
+          Dark mode
+        </button>
+      </header>
+
+      <p id="summary" class="summary" aria-live="polite"></p>
+
+      <form id="task-form" class="task-form">
+        <label for="task-input" class="visually-hidden">New task</label>
+        <input
+          id="task-input"
+          name="task"
+          type="text"
+          placeholder="What do you need to focus on?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" data-filter="all">All</button>
+        <button type="button" data-filter="active">Active</button>
+        <button type="button" data-filter="done">Done</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty" hidden>Nothing to show here.</p>
+
+      <button id="clear-done" class="link-button" type="button">
+        Clear completed
+      </button>
+    </main>
+  </body>
+</html>

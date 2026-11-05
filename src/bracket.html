@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bracket - Champions Tournament Manager</title>
+    <meta name="description" content="Bracket page for Pokemon Champions Tournament Manager Web App">
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="main.js"></script>
+    <script defer type="module" src="bracket.js"></script>
+    <link rel="icon" href="favicon.png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+  <body>
+    <header id="header">
+      <h1>Champions Tournament Manager</h1>
+      <nav id="primary_nav" class="primary_nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="bracket.html" class="currentPage" aria-current="page">Bracket</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <form id="bracket_nums_submission" class="bracket_nums_submission">
+        <label for="participants">Participants (Even number): </label>
+        <input type="number" name="participants" id="participants" required>
+        <button type="submit">Submit</button>
+      </form>
+
+
+    <div class="bracket hidden">
+      
+    </div>
+
+
+
+
+    </main>
+
+    <footer id="footer">Landon Mahaffey</footer>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+:root {
+  --page-background: #f3f6fb;
+  --main-text: #172033;
+  --line-color: #CBD5E1;
+  --line-width: 2px;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --primary-accent: #2563EB;
+  --secondary-accent: #F97316;
+  --winner-success: #15803D;
+  --normal-gap: 2rem;
+  --small-gap: 1rem;
+}
+
+
+body{
+    margin: var(--small-gap);
+    margin-top: 0;
+    min-height: 100dvh;
+    background-color: var(--page-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    text-align: center;
+    padding: var(--small-gap);
+    border-bottom: solid var(--line-width) var(--secondary-accent);
+}
+
+header h1{
+    font-size: clamp(2rem, 8vw, 3.3rem);
+    text-shadow: 0.08rem 0.08rem var(--primary-accent);
+}
+
+
+main{
+    margin-top: var(--small-gap);
+    align-items: flex-start;
+    text-align: center;
+    background-color: var(--card-bg);
+    border: solid var(--line-width) var(--border-color);
+    border-radius: 15px;
+    flex: 1 0 auto;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit:cover;
+    width: clamp(80px, 10vw, 160px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main p{
+    margin: var(--small-gap);
+}
+
+.primary_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.primary_nav a{
+    color: #ffffff;
+    padding: calc(var(--small-gap)/2);
+    width: 50px;
+    background-color: #1e40af;
+    border-radius: 15px;
+    border: var(--line-width) solid var(--main-text)
+}
+
+.primary_nav a.currentPage{
+    background-color: #172554;
+    color: #ffffff;
+}
+
+.primary_nav a:hover{
+    background-color: #172554;
+    color: #ffffff;
+}
+
+.pokemon_team_grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.teamate_builder{
+    background: var(--card-bg);
+    border: var(--line-width) solid var(--main-text);
+    border-top: 4px solid var(--primary-accent);
+    padding: 1rem;
+    margin-top: var(--small-gap);
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgb(23 32 51 / 8%);
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.teamate_builder h2,
+.teamate_builder h3 {
+    color: var(--main-text);
+    margin: 0 0 0.75rem;
+}
+
+.pokemon_selection_area {
+    margin: var(--small-gap);
+}
+
+.pokemon_selection_area h3 {
+    margin-top: var(--small-gap);
+}
+
+.teamate_builder h2{
+    text-shadow: 0.08rem 0.08rem 3px var(--primary-accent);
+}
+
+.teamate_builder h3 {
+    border-bottom: var(--line-width) solid var(--secondary-accent);
+}
+
+.teamate_builder select,
+.teamate_builder input {
+  border: 1px solid var(--line-color);
+  border-radius: 6px;
+  height: 20px;
+}
+
+.teamate_builder select:focus-visible,
+.teamate_builder input:focus-visible{
+    outline: 3px solid rgb(37 99 235 / 30%);
+    border-color: var(--primary-accent);
+}
+
+.ev_pool{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    grid-template-rows: repeat(3, 1fr);
+    flex: 1;
+}
+
+.ev_pool label{
+    margin-top: 30%;
+}
+
+.ev_pool input{
+    max-height: 20px;
+    max-width: 40px;
+    margin-top: 25%;
+}
+
+.move_pool{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    gap: var(--small-gap);
+    padding-bottom: var(--small-gap);
+    border-bottom: var(--line-width) solid var(--secondary-accent);
+}
+
+.move_pool select{
+    max-height: 19px;
+}
+
+.other_options_headers{
+    display: flex;
+    justify-content: space-evenly;
+}
+.evs_and_moves{
+    display: flex;
+    flex-direction: column;
+}
+
+.ability_and_nature{
+    margin: var(--small-gap);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: space-evenly;
+}
+
+#bracket_nums_submission{
+    margin: var(--small-gap);
+}
+
+#bracket_nums_submission input,
+#bracket_nums_submission button{
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+}
+
+#bracket_nums_submission input:focus-visible{
+    outline: 3px solid rgb(37 99 235 / 30%);
+    border-color: var(--primary-accent);
+}
+
+#bracket_submission button:hover{
+    cursor: pointer;
+}
+
+#team_name,
+#saved_teams,
+#save_team,
+#load_team,
+#clear {
+    box-sizing: border-box;
+    min-height: 2.5rem;
+    margin: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    border: var(--line-width) solid var(--main-text);
+    border-radius: 10px;
+    font: inherit;
+}
+
+#team_name,
+#saved_teams {
+    border-color: var(--line-color);
+    background-color: var(--card-bg);
+    color: var(--main-text);
+}
+
+#team_name {
+    width: clamp(10rem, 24vw, 16rem);
+}
+
+#saved_teams {
+    min-width: 10rem;
+}
+
+#save_team,
+#load_team,
+#clear {
+    background-color: #1e40af;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#save_team:hover,
+#load_team:hover,
+#clear:hover {
+    background-color: #172554;
+    color: #ffffff;
+}
+
+#team_name:focus-visible,
+#saved_teams:focus-visible,
+#save_team:focus-visible,
+#load_team:focus-visible,
+#clear:focus-visible {
+    outline: 3px solid rgb(37 99 235 / 30%);
+    outline-offset: 2px;
+}
+
+
+.hidden{
+    display: none;
+}
+
+
+footer{
+    margin-top: var(--small-gap);
+    text-align: center;
+}
+
+
+
+/**/
+
+
+/* Main Container */
+.bracket {
+  display: flex;
+  padding: var(--small-gap);
+  gap: var(--small-gap);
+  overflow-x: auto; /* Horizontal scroll for large tournament trees */
+}
+
+/* Round Layout */
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distributes matches evenly to line up with previous rounds */
+  min-width: 180px;
+}
+
+/* Match Box Styling */
+.match {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.team + .team {
+  border-top: 1px solid var(--border-color);
+}
+
+.team.winner {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Connector Lines Rules
+
+ Horizontal line exiting every match (except the final champion) 
+.round:not(:last-child) .match::after {
+  content: "";
+  position: absolute;
+  right: calc(var(--gap) * -0.5);
+  top: 50%;
+  width: calc(var(--gap) * 0.5);
+  height: var(--line-width);
+  background: var(--line-color);
+}
+
+/* Vertical bracket arm extending up/down from paired matches 
+.round:not(:last-child) .match:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  right: calc(var(--gap) * -0.5);
+  top: 50%;
+  height: 151%; /* Expands to meet the adjacent match connector 
+  width: var(--line-width);
+  background: var(--line-color);
+}
+
+
+
+/* Horizontal line entering matches in round 2 onwards 
+.round:not(:first-child) .match::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--gap) * -0.6);
+  top: 50%;
+  width: calc(var(--gap) * 0.6);
+  height: var(--line-width);
+  background: var(--line-color);
+}
+
+*/
+
+@media screen and (min-width: 700px){
+
+    .pokemon_team_grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  }
+}

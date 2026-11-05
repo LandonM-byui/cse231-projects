@@ -1,0 +1,159 @@
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #667085;
+  --accent: #2f6f4f;
+  --accent-text: #ffffff;
+  --border: #d9d6cc;
+}
+
+[data-theme="dark"] {
+  --bg: #15191c;
+  --surface: #1f2529;
+  --text: #eceff1;
+  --muted: #9aa5ad;
+  --accent: #6fcf97;
+  --accent-text: #10201a;
+  --border: #333b41;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.board {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.summary {
+  color: var(--muted);
+}
+
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: var(--surface);
+}
+
+.task-form button {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.filters button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+}
+
+.task label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task.is-done label {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+}
+
+.link-button {
+  margin-top: 1.5rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

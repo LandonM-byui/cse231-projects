@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teams - Champions Tournament Manager</title>
+    <meta name="description" content="Team building page for Pokemon Champions Tournament Manager Web App">
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="teams.js"></script>
+    <link rel="icon" href="favicon.png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+  <body>
+    <header id="header">
+      <h1>Champions Tournament Manager</h1>
+      <nav id="primary_nav" class="primary_nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="teams.html" class="currentPage" aria-current="page">Teams</a>
+        <a href="bracket.html">Bracket</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <label for="team_name">Team Name:</label>
+      <input id="team_name" type="text" value="Team Name">
+      <button id="save_team">Save Team</button>
+      <label for="saved_teams">Saved Teams:</label>
+      <select id="saved_teams">
+
+      </select>
+      <button id="load_team">Load Team</button>
+      <button id="clear">Clear Team</button>
+      <div class="pokemon_team_grid">
+        <section id="team_member_1" class="teamate_builder">
+          <h2>Pokemon 1</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_1">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_1" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+            <div data-field="pokemon_picture">
+              
+            </div>
+          </div>
+          <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_1">
+              <label for="pokemon_1_hp">HP:</label>
+              <input type="number" id="pokemon_1_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_1_atk">Atk:</label>
+              <input type="number" id="pokemon_1_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_1_def">Def:</label>
+              <input type="number" id="pokemon_1_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_1_spAtk">SpA:</label>
+              <input type="number" id="pokemon_1_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_1_spDef">SpD:</label>
+              <input type="number" id="pokemon_1_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_1_spe">Spe:</label>
+              <input type="number" id="pokemon_1_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves:</h3>
+            <div class="move_pool">
+              <label for="pokemon_1_move1">Move 1:</label>
+              <select name="move1" id="pokemon_1_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_1_move2">Move 2:</label>
+              <select name="move2" id="pokemon_1_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_1_move3" ">Move 3:</label>
+              <select name="move3" id="pokemon_1_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_1_move4">Move 4:</label>
+              <select name="move4" id="pokemon_1_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_1_ability">Ability:</label>
+              <select name="ability" id="pokemon_1_ability" data-field="ability">
+                <option value="1">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="pokemon_1_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_1_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="team_member_2" class="teamate_builder">
+          <h2>Pokemon 2</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_2">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_2" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+          </div>  
+  
+  <div data-field="pokemon_picture">
+              
+            </div>        <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_2">
+              <label for="pokemon_2_hp">HP:</label>
+              <input type="number" id="pokemon_2_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_2_atk">Atk:</label>
+              <input type="number" id="pokemon_2_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_2_def">Def:</label>
+              <input type="number" id="pokemon_2_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_2_spAtk">SpA:</label>
+              <input type="number" id="pokemon_2_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_2_spDef">SpD:</label>
+              <input type="number" id="pokemon_2_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_2_spe">Spe:</label>
+              <input type="number" id="pokemon_2_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves: </h3>
+            <div class="move_pool">
+              <label for="pokemon_2_move1">Move 1:</label>
+              <select name="move1" id="pokemon_2_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_2_move2">Move 2:</label>
+              <select name="move2" id="pokemon_2_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_2_move3">Move 3:</label>
+              <select name="move3" id="pokemon_2_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_2_move4">Move 4:</label>
+              <select name="move4" id="pokemon_2_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_2_ability">Ability:</label>
+              <select name="ability" id="pokemon_2_ability" data-field="ability">
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div class="nature">
+              <label for="pokemon_2_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_2_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="team_member_3" class="teamate_builder">
+          <h2>Pokemon 3</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_3">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_3" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+          </div>  
+  
+  <div data-field="pokemon_picture">
+              
+            </div>        <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_3">
+              <label for="pokemon_3_hp">HP:</label>
+              <input type="number" id="pokemon_3_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_3_atk">Atk:</label>
+              <input type="number" id="pokemon_3_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_3_def">Def:</label>
+              <input type="number" id="pokemon_3_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_3_spAtk">SpA:</label>
+              <input type="number" id="pokemon_3_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_3_spDef">SpD:</label>
+              <input type="number" id="pokemon_3_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_3_spe">Spe:</label>
+              <input type="number" id="pokemon_3_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves: </h3>
+            <div class="move_pool">
+              <label for="pokemon_3_move1">Move 1:</label>
+              <select name="move1" id="pokemon_3_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_3_move2">Move 2:</label>
+              <select name="move2" id="pokemon_3_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_3_move3" ">Move 3:</label>
+              <select name="move3" id="pokemon_3_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_3_move4">Move 4:</label>
+              <select name="move4" id="pokemon_3_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_3_ability">Ability:</label>
+              <select name="ability" id="pokemon_3_ability" data-field="ability">
+                <option value="1">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="pokemon_3_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_3_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="team_member_4" class="teamate_builder">
+          <h2>Pokemon 4</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_4">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_4" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+          </div>  
+  
+  <div data-field="pokemon_picture">
+              
+            </div>        <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_4">
+              <label for="pokemon_4_hp">HP:</label>
+              <input type="number" id="pokemon_4_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_4_atk">Atk:</label>
+              <input type="number" id="pokemon_4_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_4_def">Def:</label>
+              <input type="number" id="pokemon_4_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_4_spAtk">SpA:</label>
+              <input type="number" id="pokemon_4_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_4_spDef">SpD:</label>
+              <input type="number" id="pokemon_4_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_4_spe">Spe:</label>
+              <input type="number" id="pokemon_4_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves: </h3>
+            <div class="move_pool">
+              <label for="pokemon_4_move1">Move 1:</label>
+              <select name="move1" id="pokemon_4_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_4_move2">Move 2:</label>
+              <select name="move2" id="pokemon_4_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_4_move3" ">Move 3:</label>
+              <select name="move3" id="pokemon_4_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_4_move4">Move 4:</label>
+              <select name="move4" id="pokemon_4_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_4_ability">Ability:</label>
+              <select name="ability" id="pokemon_4_ability" data-field="ability">
+                <option value="1">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="pokemon_4_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_4_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="team_member_5" class="teamate_builder">
+          <h2>Pokemon 5</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_5">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_5" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+          </div>  
+  
+  <div data-field="pokemon_picture">
+              
+            </div>        <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_5">
+              <label for="pokemon_5_hp">HP:</label>
+              <input type="number" id="pokemon_5_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_5_atk">Atk:</label>
+              <input type="number" id="pokemon_5_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_5_def">Def:</label>
+              <input type="number" id="pokemon_5_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_5_spAtk">SpA:</label>
+              <input type="number" id="pokemon_5_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_5_spDef">SpD:</label>
+              <input type="number" id="pokemon_5_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_5_spe">Spe:</label>
+              <input type="number" id="pokemon_5_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves: </h3>
+            <div class="move_pool">
+              <label for="pokemon_5_move1">Move 1:</label>
+              <select name="move1" id="pokemon_5_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_5_move2">Move 2:</label>
+              <select name="move2" id="pokemon_5_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_5_move3" ">Move 3:</label>
+              <select name="move3" id="pokemon_5_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_5_move4">Move 4:</label>
+              <select name="move4" id="pokemon_5_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_5_ability">Ability:</label>
+              <select name="ability" id="pokemon_5_ability" data-field="ability">
+                <option value="1">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="pokemon_5_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_5_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section id="team_member_6" class="teamate_builder">
+          <h2>Pokemon 6</h2>
+          <div class="pokemon_selection_area">
+            <label for="pokemon_6">Pokemon:</label>
+            <select name="pokemon_name" id="pokemon_6" data-field="pokemon">
+              <option value="1">Bulbasaur</option>
+            </select>
+          </div>  
+  
+  <div data-field="pokemon_picture">
+              
+            </div>        <h3>Stats:</h3>
+          <div class="evs_and_moves">
+            <div class="ev_pool" id="ev_pool_6">
+              <label for="pokemon_6_hp">HP:</label>
+              <input type="number" id="pokemon_6_hp" data-field="hp_input" min="0" max="32" value="0">
+              <p data-field="hp">0</p>
+              <label for="pokemon_6_atk">Atk:</label>
+              <input type="number" id="pokemon_6_atk" data-field="atk_input" min="0" max="32" value="0">
+              <p data-field="atk">0</p>
+              <label for="pokemon_6_def">Def:</label>
+              <input type="number" id="pokemon_6_def" data-field="def_input" min="0" max="32" value="0">
+              <p data-field="def">0</p>
+              <label for="pokemon_6_spAtk">SpA:</label>
+              <input type="number" id="pokemon_6_spAtk" data-field="spAtk_input" min="0" max="32" value="0">
+              <p data-field="spAtk">0</p>
+              <label for="pokemon_6_spDef">SpD:</label>
+              <input type="number" id="pokemon_6_spDef" data-field="spDef_input" min="0" max="32" value="0">
+              <p data-field="spDef">0</p>
+              <label for="pokemon_6_spe">Spe:</label>
+              <input type="number" id="pokemon_6_spe" data-field="spe_input" min="0" max="32" value="0">
+              <p data-field="spe">0</p>
+            </div>
+            <h3>Moves: </h3>
+            <div class="move_pool">
+              <label for="pokemon_6_move1">Move 1:</label>
+              <select name="move1" id="pokemon_6_move1" data-field="move1">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_6_move2">Move 2:</label>
+              <select name="move2" id="pokemon_6_move2" data-field="move2">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_6_move3" ">Move 3:</label>
+              <select name="move3" id="pokemon_6_move3" data-field="move3">
+                <option value="1">None</option>
+              </select>
+              <label for="pokemon_6_move4">Move 4:</label>
+              <select name="move4" id="pokemon_6_move4" data-field="move4">
+                <option value="1">None</option>
+              </select>
+            </div>
+          </div>
+          <div class="ability_and_nature">
+            <div class="ability">
+              <label for="pokemon_6_ability">Ability:</label>
+              <select name="ability" id="pokemon_6_ability" data-field="ability">
+                <option value="1">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="pokemon_6_nature" class="nature">Nature:</label>
+              <select name="nature" id="pokemon_6_nature" data-field="nature">
+                <option value="atk,atk">Hardy</option>
+                <option value="atk,def">Lonely</option>
+                <option value="atk,spAtk">Adamant</option>
+                <option value="atk,spDef">Naughty</option>
+                <option value="atk,spe">Brave</option>
+                <option value="def,atk">Bold</option>
+                <option value="def,def">Docile</option>
+                <option value="def,spAtk">Impish</option>
+                <option value="def,spDef">Lax</option>
+                <option value="def,spe">Relaxed</option>
+                <option value="spAtk,atk">Modest</option>
+                <option value="spAtk,def">Mild</option>
+                <option value="spAtk,spAtk">Bashful</option>
+                <option value="spAtk,spDef">Rash</option>
+                <option value="spAtk,spe">Quiet</option>
+                <option value="spDef,atk">Calm</option>
+                <option value="spDef,def">Gentle</option>
+                <option value="spDef,spAtk">Careful</option>
+                <option value="spDef,spDef">Quirky</option>
+                <option value="spDef,spe">Sassy</option>
+                <option value="spe,atk">Timid</option>
+                <option value="spe,def">Hasty</option>
+                <option value="spe,spAtk">Jolly</option>
+                <option value="spe,spDef">Naive</option>
+                <option value="spe,spe">Serious</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer id="footer">Landon Mahaffey</footer>
+  </body>
+</html>
